@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: core-bank-user
+  datasource:
+    url: jdbc:mysql://localhost:3306/corebankuser
+    username: root
+    password: 12345678
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+server:
+  port: 8083
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+
+info:
+  app:
+    name: ${spring.application.name}
+
+
+
+
+app:
+  config:
+    keycloak:
+      server-url: http://localhost:8080/auth
+      realm: core-banking-app
+      clientId: core-banking-api-client
+      client-secret: e8548d56-d743-45ef-8655-063c9cd96759
